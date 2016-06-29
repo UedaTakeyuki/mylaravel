@@ -21,4 +21,9 @@ Route::get('/', 'WelcomeController@index');
 Route::get('contact', 'PagesController@contact');   // 追加
 Route::get('about', 'PagesController@about');    // 追加
 Route::get('articles', 'ArticlesController@index');
+// 追加
+Route::get('articles/create', 'ArticlesController@create'); // ①
 Route::get('articles/{id}', 'ArticlesController@show');
+// 追加
+Route::post('articles', 'ArticlesController@store');
+ 
