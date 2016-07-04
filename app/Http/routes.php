@@ -21,6 +21,7 @@ Route::get('/', 'WelcomeController@index');
 Route::get('contact', 'PagesController@contact');   // 追加
 Route::get('about', 'PagesController@about');    // 追加
 
+/*
 Route::get('articles', ['as' => 'articles.index', 'uses' => 'ArticlesController@index']);
 // 追加
 Route::get('articles/create', ['as' => 'articles.create', 'uses' => 'ArticlesController@create']); // ①
@@ -30,3 +31,7 @@ Route::post('articles', ['as' => 'articles.store', 'uses' => 'ArticlesController
 Route::get('articles/{id}/edit', ['as' => 'articles.edit', 'uses' => 'ArticlesController@edit']);  // 追加
 Route::patch('articles/{id}', ['as' => 'articles.update', 'uses' => 'ArticlesController@update']);  // 追加
 Route::delete('articles/{id}', ['as' => 'articles.destroy', 'uses' => 'ArticlesController@destroy']);
+*/
+
+Route::resource('articles', 'ArticlesController');
+Route::resource('posts', 'PostsController');
