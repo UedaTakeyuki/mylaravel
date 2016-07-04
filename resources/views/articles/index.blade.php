@@ -7,7 +7,8 @@
  
     <hr/>
      
-    {!! link_to('articles/create', '新規作成', ['class' => 'btn btn-primary']) !!}
+{{--    {!! link_to('articles/create', '新規作成', ['class' => 'btn btn-primary']) !!} --}}
+    {!! link_to(route('articles.create'), '新規作成', ['class' => 'btn btn-primary']) !!}
 
     @foreach($articles as $article)
         <article>
