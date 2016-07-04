@@ -26,4 +26,5 @@ Route::get('articles/create', 'ArticlesController@create'); // ①
 Route::get('articles/{id}', 'ArticlesController@show');
 // 追加
 Route::post('articles', 'ArticlesController@store');
- 
+Route::get('articles/{id}/edit', 'ArticlesController@edit');  // 追加
+Route::patch('articles/{id}', 'ArticlesController@update');  // 追加

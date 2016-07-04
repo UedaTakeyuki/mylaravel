@@ -10,4 +10,8 @@
     <article>
         <div class="body">{{ $article->body }}</div>
     </article>
-@endsection
+    
+    <br/>
+ 
+    {!! link_to(action('ArticlesController@edit', [$article->id]), '編集', ['class' => 'btn btn-primary']) !!}
+@stop

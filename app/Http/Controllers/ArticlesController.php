@@ -46,4 +46,18 @@ class ArticlesController extends Controller
         // ③記事一覧へリダイレクト
         return redirect('articles');
     }
+    
+    public function edit($id) {
+        $article = Article::findOrFail($id);
+ 
+        return view('articles.edit', compact('article'));
+    }
+ 
+    public function update($id, ArticleRequest $request) {
+        $article = Article::findOrFail($id);
+ 
+        $article->update($request->all());
+ 
+        return redirect(url('articles', [$article->id]));
+    }
 }
