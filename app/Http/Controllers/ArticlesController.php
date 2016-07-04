@@ -42,6 +42,7 @@ class ArticlesController extends Controller
 */        
         // ②マスアサインメントを使って、記事をDBに作成
         Article::create($request->all());
+        \Session::flash('flash_message', '記事を追加しました。');  // 追加      
  
         // ③記事一覧へリダイレクト
         return redirect('articles');
@@ -57,6 +58,7 @@ class ArticlesController extends Controller
         $article = Article::findOrFail($id);
  
         $article->update($request->all());
+        \Session::flash('flash_message', '記事を更新しました。');  // 追加      
  
         return redirect(url('articles', [$article->id]));
     }
@@ -65,7 +67,8 @@ class ArticlesController extends Controller
         $article = Article::findOrFail($id);
  
         $article->delete();
- 
+        \Session::flash('flash_message', '記事を削除しました。');  // 追加      
+
         return redirect('articles');
     }
 
