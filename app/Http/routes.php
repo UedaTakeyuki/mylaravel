@@ -16,10 +16,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('/', 'WelcomeController@index');
-//Route::get('contact', 'WelcomeController@contact');   // 追加
+
 Route::get('contact', 'PagesController@contact');   // 追加
 Route::get('about', 'PagesController@about');    // 追加
+
+Route::get('/', 'ArticlesController@index');  // root を記事一覧にします
 
 /*
 Route::get('articles', ['as' => 'articles.index', 'uses' => 'ArticlesController@index']);

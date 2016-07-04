@@ -9,6 +9,9 @@
 </head>
  
 <body>
+    {{-- ナビゲーションバーの Partial を使用 --}}
+    @include('navbar')
+    
     <div class="container"><!-- ② 追加 -->
         {{-- フラッシュメッセージの表示 --}}
         @if (Session::has('flash_message'))
