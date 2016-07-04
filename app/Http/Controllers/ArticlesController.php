@@ -29,12 +29,17 @@ class ArticlesController extends Controller
         return view('articles.create');
     }
     
-    public function store() {
+    public function store(Request $request) {
         // ①フォームの入力値を取得
-        $inputs = \Request::all();
- 
+        $rules = [    // ②
+            'title' => 'required|min:3',
+            'body' => 'required',
+            'published_at' => 'required|date',
+        ];
+        $this->validate($request, $rules);  // ③ 
+        
         // ②マスアサインメントを使って、記事をDBに作成
-        Article::create($inputs);
+        Article::create($request->all());
  
         // ③記事一覧へリダイレクト
         return redirect('articles');
